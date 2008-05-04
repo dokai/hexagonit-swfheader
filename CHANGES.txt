@@ -1,0 +1,12 @@
+Change history
+**************
+
+1.0.1 (2008-04-29)
+==================
+
+ - Refacted a reversed() call to make the package Python 2.3 compatible.
+
+1.0 (2008-04-16)
+================
+
+ - First public release [dokai]

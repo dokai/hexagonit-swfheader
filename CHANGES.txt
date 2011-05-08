@@ -1,6 +1,14 @@
 Change history
 **************
 
+1.1 (2010-05-08)
+================
+
+ - Fixed a bug with parsing the "fps" and "frames" fields. The order of the
+   fields were reversed and additionally the "fps" field was parsed
+   incorrectly. Bug reported by Valeriy Zmiyevskoy.
+   [dokai]
+
 1.0.1 (2008-04-29)
 ==================
 

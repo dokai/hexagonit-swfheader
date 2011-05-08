@@ -1,11 +1,14 @@
-from setuptools import setup, find_packages
+from setuptools import find_packages
+from setuptools import setup
 
 import os.path
 
-version = '1.0.1'
+version = '1.1'
+
 
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
+
 
 setup(name='hexagonit.swfheader',
       version=version,

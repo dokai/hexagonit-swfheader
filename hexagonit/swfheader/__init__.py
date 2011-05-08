@@ -65,9 +65,17 @@ def parse(input):
 
     header['width'] = header['xmax'] - header['xmin']
     header['height'] = header['ymax'] - header['ymin']
-    
-    header['frames'] = read_ui16(buffer[0:2])
-    header['fps'] = read_ui16(buffer[2:4])
+
+    # Appendix A of the SWF specification states the following about the FPS
+    # field:
+    #
+    #    [FPS] is supposed to be stored as a 16-bit integer, but the first
+    #    byte (or last depending on how you look at it) is completely ignored.
+    #
+    # We handle this by parsing the value as UI16 and taking only the first
+    # byte as the value.
+    header['fps'] = read_ui16(buffer[0:2]) >> 8
+    header['frames'] = read_ui16(buffer[2:4])
 
     input.close()
     return header

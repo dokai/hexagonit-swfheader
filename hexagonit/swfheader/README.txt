@@ -14,11 +14,18 @@ filesystem path or a file-like object.
 
     >>> import hexagonit.swfheader
     >>> metadata = hexagonit.swfheader.parse(TEST_SWF)
-    >>> list(sorted(metadata.keys()))
-    ['compressed', 'fps', 'frames', 'height', 'size', 'version', 'width', 'xmax', 'xmin', 'ymax', 'ymin']
-
-    >>> metadata['width'], metadata['height']
-    (550, 400)
+    >>> pprint(metadata)
+    {'compressed': False,
+     'fps': 12,
+     'frames': 1,
+     'height': 400,
+     'size': 153,
+     'version': 5,
+     'width': 550,
+     'xmax': 550,
+     'xmin': 0,
+     'ymax': 400,
+     'ymin': 0}
 
 
 The ``parse`` function returns a dictionary that contains the

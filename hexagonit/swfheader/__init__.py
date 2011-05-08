@@ -1,5 +1,6 @@
-import zlib
 import struct
+import zlib
+
 
 def parse(input):
     """Parses the header information from an SWF file."""
@@ -10,8 +11,10 @@ def parse(input):
 
     def read_ui8(c):
         return struct.unpack('<B', c)[0]
+
     def read_ui16(c):
         return struct.unpack('<H', c)[0]
+
     def read_ui32(c):
         return struct.unpack('<I', c)[0]
 
@@ -48,7 +51,7 @@ def parse(input):
 
     for item in 'xmin', 'xmax', 'ymin', 'ymax':
         value = 0
-        for value_bit in range(nbits-1, -1, -1): # == reversed(range(nbits))
+        for value_bit in range(nbits - 1, -1, -1):  # == reversed(range(nbits))
             if (current_byte << bit_cursor) & 0x80:
                 value |= 1 << value_bit
             # Advance the bit cursor to the next bit
@@ -97,3 +100,7 @@ def main():
     print 'Bounding box: (%s, %s, %s, %s)' % (header['xmin'], header['xmax'], header['ymin'], header['ymax'])
     print 'Frames:       %s' % header['frames']
     print 'FPS:          %s' % header['fps']
+
+
+if __name__ == '__main__':
+    main()

@@ -11,7 +11,7 @@ setup(name='hexagonit.swfheader',
       version=version,
       description="SWF metadata parser",
       long_description=(
-        read('hexagonit', 'swfheader', 'README.txt') + '\n' +
+        read('README.rst') + '\n' +
         read('CHANGES.txt') + '\n\n' +
         'Download\n' +
         '*********\n'

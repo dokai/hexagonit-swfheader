@@ -21,7 +21,7 @@ def int_valued_dict(d):
 def test_suite():
     suite = unittest.TestSuite()
     suite.addTest(doctest.DocFileSuite(
-        'README.txt',
+        '../../README.rst',
         globs={
             'TEST_SWF': os.path.join(os.path.dirname(__file__), 'test.swf'),
             'pprint': lambda d: pprint.pprint(int_valued_dict(d))}))

@@ -1,6 +1,14 @@
 Change history
 **************
 
+1.2 (xxxx-xx-xx)
+================
+
+ - Only close file handles explicitly opened by the parser itself. Fixes an
+   issue where file handles that were passed in as parameters were prematurely
+   closed. See https://github.com/dokai/hexagonit-swfheader/pull/1
+   [aleksandr-rakov]
+
 1.1 (2010-05-08)
 ================
 

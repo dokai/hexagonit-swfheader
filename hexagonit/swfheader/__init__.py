@@ -4,10 +4,12 @@ import zlib
 
 def parse(input):
     """Parses the header information from an SWF file."""
+    need_close=False
     if hasattr(input, 'read'):
         input.seek(0)
     else:
         input = open(input, 'rb')
+        need_close=True
 
     def read_ui8(c):
         return struct.unpack('<B', c)[0]
@@ -80,7 +82,8 @@ def parse(input):
     header['fps'] = read_ui16(buffer[0:2]) >> 8
     header['frames'] = read_ui16(buffer[2:4])
 
-    input.close()
+    if need_close:
+        input.close()
     return header
 
 

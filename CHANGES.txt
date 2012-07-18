@@ -1,7 +1,7 @@
 Change history
 **************
 
-1.2 (xxxx-xx-xx)
+1.2 (2012-07-18)
 ================
 
  - Only close file handles explicitly opened by the parser itself. Fixes an
